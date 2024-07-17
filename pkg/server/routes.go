@@ -69,7 +69,6 @@ func setupRouter(appState *models.AppState) *chi.Mux {
 		middleware.RealIP,
 		middleware.CleanPath,
 		SendVersion,
-		middleware.Heartbeat("/healthz"),
 	)
 
 	// Only setup web routes if enabled

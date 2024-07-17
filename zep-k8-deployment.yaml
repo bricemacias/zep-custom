@@ -69,15 +69,6 @@ spec:
       containers:
         - name: zep-nlp
           image: ghcr.io/getzep/zep-nlp-server:latest
-          readinessProbe:
-            httpGet:
-              port: 5557
-              path: /healthz
-            initialDelaySeconds: 20
-            periodSeconds: 10
-            timeoutSeconds: 5
-            successThreshold: 1
-            failureThreshold: 3
           resources:
             requests:
               memory: "1Gi"
@@ -138,15 +129,6 @@ spec:
           #       secretKeyRef:
           #         name: azure-openai-secret
           #         key: endpoint
-          readinessProbe:
-            httpGet:
-              port: 8000
-              path: /healthz
-            initialDelaySeconds: 10
-            periodSeconds: 5
-            timeoutSeconds: 10
-            successThreshold: 1
-            failureThreshold: 3
           resources:
             requests:
               memory: "1Gi"
